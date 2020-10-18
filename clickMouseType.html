@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Events Playground</title>
+</head>
+<body>
+<p>
+    <button id="clicky">Click me</button>
+</p>
+<p>
+    <span id="mousey">Mouse over me</span>
+</p>
+<p>
+    <input id="typey" type="text" value="Type in me"/>
+</p>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+
+<script>
+    $(init);
+
+    function init() {
+        $("#clicky").click(sayClicked);
+        $("#mousey").mouseover(sayMoused);
+        $("#typey").keypress(sayTyped);
+    }
+
+    function sayClicked() {
+        alert("Button clicked!");
+    }
+
+    function sayMoused() {
+        alert("Moused over!");
+    }
+
+    function sayTyped() {
+        alert("Key pressed!");
+    }
+</script>
+</html>
+

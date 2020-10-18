@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>More jQuery!</title>
+
+    <style>
+        .headline {
+            color: red;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+<button id="hidingButton">Hide It!</button>
+<button id="showingButton">Show It!</button>
+<button id="fadeOutButton">Fade Out!</button>
+<button id="fadeInButton">Fade In!</button>
+<button id="addHeadingButton">Add a Heading!</button>
+<button id="removeHeadingsButton">Remove All Headings!</button>
+<button id="animateButton">Animate the Sandwich!</button>
+<button id="newsFlashButton">News Flash!</button>
+<br/>
+<img id="sandwichPic" src="sandwich.jpg" alt="A sandwich">
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+
+<script>
+    $(init);
+
+    function init() {
+        // Set all your event handlers here
+        // e.g. $("#someButton").click(someFunction);
+        $("#hidingButton").click(hidePicture);
+        $("#showingButton").click(showPicture);
+
+        $("#fadeOutButton").click(fadePictureOut);
+        $("#fadeInButton").click(fadePictureIn);
+
+        $("#removeHeadingsButton").click(removeHeadings);
+        $("#addHeadingButton").click(addHeading);
+
+        $("#animateButton").click(animate);
+        $("#newsFlashButton").click(newsFlash);
+    }
+
+    function hidePicture() {
+        $("#sandwichPic").hide();
+    }
+
+    function showPicture() {
+        $("#sandwichPic").show();
+    }
+
+    function fadePictureIn() {
+        $("#sandwichPic").fadeIn(5000); // milliseconds
+    }
+
+    function fadePictureOut() {
+        $("#sandwichPic").fadeOut(500);
+    }
+
+    function removeHeadings() {
+        $("h3").remove();
+    }
+
+    function addHeading() {
+        var newHeading = $("<h3>I'm Brand New!</h3>");
+        $("body").append(newHeading);
+    }
+
+    function animate() {
+        $("#sandwichPic").fadeOut(750).delay(500).fadeIn(1000);
+    }
+
+    function newsFlash() {
+        $("h3").addClass("headline").html("News Flash!");
+    }
+
+</script>
+</html>

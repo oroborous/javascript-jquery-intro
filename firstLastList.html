@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>First and Last</title>
+</head>
+
+<body>
+<ol>
+    <li>Prancer</li>
+    <li>Donner</li>
+    <li>Blitzen</li>
+</ol>
+
+<button id="firstButton">New First Item</button>
+<button id="lastButton">New Last Item</button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+
+<script>
+    $(init);
+
+    function init() {
+        $("#firstButton").click(newFirstListItem);
+        $("#lastButton").click(newLastListItem);
+    }
+
+    function newFirstListItem() {
+        var newListItem = $("<li>Dancer</li>");
+        $("li").first().before(newListItem);
+    }
+
+    function newLastListItem() {
+        var newListItem = $("<li>Rudolph</li>");
+        $("li").last().after(newListItem);
+    }
+</script>
+</html>
